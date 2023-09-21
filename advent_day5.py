@@ -38,8 +38,8 @@ def group_into_3(moves_list, group_size):
 groups = moves
 grouped_moves = group_into_3(moves, 3)
 print(grouped_moves)
-
-# TODO : get N values from dictionary for COL_X
-# TODO : remove N values from dictionary for COL_X
-# TODO : add/append N values to COL_Y - IN ORDER
+# TODO : Format for Moves List: [[X, Y, Z]] = move Number(X) from Column (Y) to Column (Z) - starting with Y[-1]
+# TODO : get N value from dictionary for Col_Z[-1]
+# TODO : remove N values from dictionary for COL_Z[-1]
+# TODO : add/append N value to Col_Y. Repeat X times
 
