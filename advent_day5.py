@@ -56,5 +56,6 @@ def move_containers(number_of_moves, subtract_column, add_column):
 
 for x in range(0, len(all_moves)):
     move_containers(all_moves[x], from_column[x], to_column[x])
+
 for x in stacks:
-    print(stacks[x])
+    print(stacks[x][-1])
