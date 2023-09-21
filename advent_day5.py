@@ -23,7 +23,7 @@ remove_move = [x for x in moves if x != 'move']
 remove_from = [y for y in remove_move if y != 'from']
 remove_to = [z for z in remove_from if z != 'to']
 
-moves = remove_to
+moves = remove_to  # All moves with "Move", "From", and "To" removed from input data
 
 
 # Format for Moves List: [[X, Y, Z]] move Number(X) from Column (Y) to Column (Z)
@@ -35,7 +35,6 @@ def group_into_3(moves_list, group_size):
     return result
 
 
-groups = moves
 grouped_moves = group_into_3(moves, 3)
 print(grouped_moves)
 # TODO : Format for Moves List: [[X, Y, Z]] = move Number(X) from Column (Y) to Column (Z) - starting with Y[-1]

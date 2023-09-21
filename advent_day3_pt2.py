@@ -1,7 +1,5 @@
 import string
 
-import trio
-
 input_data = r'C:\Users\Taylor\Downloads\adventofcode.com_2022_day_3_input.txt'
 
 rucksacks = []
