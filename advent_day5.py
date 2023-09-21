@@ -18,12 +18,9 @@ with open(move_data) as f:
     data = f.read().split()
     moves = data
 
-
-remove_move = [x for x in moves if x != 'move']
-remove_from = [y for y in remove_move if y != 'from']
-remove_to = [z for z in remove_from if z != 'to']
-
-moves = remove_to  # All moves with "Move", "From", and "To" removed from input data
+# Words "Move", "From", and "To" removed from input data
+remove_words = [x for x in moves if x != 'move' and x != 'from' and x != 'to']
+moves = remove_words
 
 
 # Format for Moves List: [[X, Y, Z]] move Number(X) from Column (Y) to Column (Z)
