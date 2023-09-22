@@ -37,6 +37,7 @@ all_moves = [int(all_moves[0]) for all_moves in grouped_moves]
 from_column = [int(from_column[1]) for from_column in grouped_moves]
 to_column = [int(to_column[2]) for to_column in grouped_moves]
 
+
 # print(all_moves)
 # print(from_column)
 # print(to_column)
@@ -47,15 +48,27 @@ to_column = [int(to_column[2]) for to_column in grouped_moves]
 #  remove N values from dictionary for COL_Z[-1]
 #  add/append N value to Col_Y. Repeat X times
 
-def move_containers(number_of_moves, subtract_column, add_column):
-    for x in range(0, number_of_moves):
-        moving_box = stacks[subtract_column][-1]
-        stacks[add_column].append(moving_box)
-        stacks[subtract_column].pop(-1)
+# Part 1 - boxes can only move 1 at a time
+# def move_containers(number_of_moves, subtract_column, add_column):
+#     for x in range(0, number_of_moves):
+#         moving_box = stacks[subtract_column][-1]
+#         stacks[add_column].append(moving_box)
+#         stacks[subtract_column].pop(-1)
+
+
+# Part 2 -  boxes can move all at once.
+def move_all_containers(number_of_moves, subtract_column, add_column):
+    for x in range(0, 1):
+        moving_boxes = stacks[subtract_column][len(stacks[subtract_column]) - number_of_moves:]
+        for boxes in moving_boxes:
+            stacks[add_column].append(boxes)
+            stacks[subtract_column].pop()
 
 
 for x in range(0, len(all_moves)):
-    move_containers(all_moves[x], from_column[x], to_column[x])
+    move_all_containers(all_moves[x], from_column[x], to_column[x])
 
 for x in stacks:
-    print(stacks[x][-1])
+    print(stacks[x])
+
+# print(stacks[1][4:])
