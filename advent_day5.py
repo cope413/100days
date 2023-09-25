@@ -58,11 +58,10 @@ to_column = [int(to_column[2]) for to_column in grouped_moves]
 
 # Part 2 -  boxes can move all at once.
 def move_all_containers(number_of_moves, subtract_column, add_column):
-    for x in range(0, 1):
-        moving_boxes = stacks[subtract_column][len(stacks[subtract_column]) - number_of_moves:]
-        for boxes in moving_boxes:
-            stacks[add_column].append(boxes)
-            stacks[subtract_column].pop()
+    moving_boxes = (stacks[subtract_column][len(stacks[subtract_column]) - number_of_moves:])
+    for box in moving_boxes:
+        stacks[add_column].append(box)
+        stacks[subtract_column].pop()
 
 
 for x in range(0, len(all_moves)):
